@@ -1,0 +1,18 @@
+[package]
+name = "sudopot"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+rpassword = "7.3.1"
+users = "0.11.0"
+dirs = "5.0.1"
+serde_yml = "0.0.10"
+serde = { version = "1.0.203", features = ["derive"] }
+
+[profile.release]
+lto = true
+opt-level = "z"
+strip = true
+codegen-units = 1
+panic = "abort"
